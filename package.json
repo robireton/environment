@@ -1,0 +1,25 @@
+{
+  "name": "environment",
+  "version": "1.0.0",
+  "description": "helpers for interacting with the process environment",
+  "type": "module",
+  "main": "environment.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robireton/environment.git"
+  },
+  "keywords": [
+    "process",
+    "environment",
+    "ecma"
+  ],
+  "author": "Rob Ireton <rob@ireton.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robireton/environment/issues"
+  },
+  "homepage": "https://github.com/robireton/environment#readme"
+}
