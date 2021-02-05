@@ -1,5 +1,5 @@
 {
-  "name": "environment",
+  "name": "@robireton/environment",
   "version": "1.0.0",
   "description": "helpers for interacting with the process environment",
   "type": "module",
