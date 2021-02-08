@@ -5,6 +5,12 @@ module.exports.parseBool = name => {
   return String(process.env[name]).toLowerCase() === 'true'
 }
 
+module.exports.parseInt = (name, ifNaN) => {
+  if (!(name in process.env)) console.log(`Warning: environment variable ${name} is not set`)
+  const x = Number.parseInt(process.env[name], 10)
+  return Number.isNaN(x) ? ifNaN : x
+}
+
 module.exports.parseFloat = (name, ifNaN) => {
   if (!(name in process.env)) console.log(`Warning: environment variable ${name} is not set`)
   const x = Number.parseFloat(process.env[name])

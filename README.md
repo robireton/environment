@@ -13,6 +13,10 @@ const env = require('@robireton/environment')
 
 env.parseBool('SOME_NAME')
 
+env.parseInt('SOME_NAME')
+
+env.parseInt('SOME_NAME', 1970)
+
 env.parseFloat('SOME_NAME')
 
 env.parseFloat('SOME_NAME', 2.71828)
@@ -33,6 +37,27 @@ env.parseFloat('SOME_NAME', 2.71828)
 ```js
 environment.parseBool('SHELL')
 // => false
+```
+
+### parseInt( *name* : `string` [, *default* : `int` ] )
+
+#### arguments
+*name* : `string`: name of an environment variable
+
+*default* : `int`: a value to return if the name is not set or can’t be parsed
+
+#### returns
+`int`: result of parsing the value of *name*.
+
+#### examples
+```js
+environment.parseInt('CLICOLOR')
+// => 1
+```
+
+```js
+environment.parseInt('SHELL', 1066)
+// => 1066
 ```
 
 ### parseFloat( *name* : `string` [, *default* : `float` ] )
