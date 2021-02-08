@@ -1,8 +1,8 @@
 {
   "name": "@robireton/environment",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "helpers for interacting with the process environment",
-  "type": "module",
+  "type": "commonjs",
   "main": "environment.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,8 +13,7 @@
   },
   "keywords": [
     "process",
-    "environment",
-    "ecma"
+    "environment"
   ],
   "author": "Rob Ireton <rob@ireton.org>",
   "license": "MIT",

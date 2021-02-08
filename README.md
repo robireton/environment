@@ -9,15 +9,17 @@ $ npm install @robireton/environment
 
 ## usage
 ```js
-import environment from '@robireton/environment'
+const env = require('@robireton/environment')
 
-environment.parseBool('SOME_NAME')
+env.parseBool('SOME_NAME')
 
-environment.parseFloat('SOME_NAME')
+env.parseFloat('SOME_NAME')
 
-environment.parseFloat('SOME_NAME', 2.71828)
+env.parseFloat('SOME_NAME', 2.71828)
 
 ```
+
+## methods
 
 ### parseBool( `string` )
 
@@ -53,4 +55,3 @@ environment.parseFloat('TERM_PROGRAM_VERSION')
 environment.parseFloat('SHELL', 3.1415)
 // => 3.1415
 ```
-
