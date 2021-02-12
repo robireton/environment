@@ -1,4 +1,9 @@
 # environment
+
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![current version](https://img.shields.io/npm/v/@robireton/environment)](https://www.npmjs.com/package/@robireton/environment)
+[![install size](https://packagephobia.com/badge?p=@robireton/environment)](https://packagephobia.com/result?p=@robireton/environment)
+
 helpers for interacting with the process environment
 
 
