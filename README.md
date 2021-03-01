@@ -26,6 +26,8 @@ env.parseFloat('SOME_NAME')
 
 env.parseFloat('SOME_NAME', 2.71828)
 
+env.parseList('SOME_NAME')
+
 ```
 
 ## methods
@@ -52,7 +54,7 @@ environment.parseBool('SHELL')
 *default* : `int`: a value to return if the name is not set or can’t be parsed
 
 #### returns
-`int`: result of parsing the value of *name*.
+`int`: result of parsing the value of *name*
 
 #### examples
 ```js
@@ -73,7 +75,7 @@ environment.parseInt('SHELL', 1066)
 *default* : `float`: a value to return if the name is not set or can’t be parsed
 
 #### returns
-`float`: result of parsing the value of *name*.
+`float`: result of parsing the value of *name*
 
 #### examples
 ```js
@@ -84,4 +86,20 @@ environment.parseFloat('TERM_PROGRAM_VERSION')
 ```js
 environment.parseFloat('SHELL', 3.1415)
 // => 3.1415
+```
+
+### parseList( *name* : `string` [, *pattern* : `RegExp` or `string` ] )
+
+#### arguments
+*name* : `string`: name of an environment variable
+
+*pattern* : `regular expression` or `string` (defaults to `/\W+/` — one or more non-word characters) used to split the value of the environment variable into an array
+
+#### returns
+`[ string, … ]`: an array of (non-empty) strings, or an empty array if *name* isn’t set 
+
+#### example
+```js
+environment.parseList('PATH', ':')
+// => [ '/usr/local/bin', '/usr/bin', '/bin', '/usr/sbin', '/sbin' ]
 ```

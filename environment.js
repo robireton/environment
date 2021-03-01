@@ -16,3 +16,11 @@ module.exports.parseFloat = (name, ifNaN) => {
   const x = Number.parseFloat(process.env[name])
   return Number.isNaN(x) ? ifNaN : x
 }
+
+module.exports.parseList = (name, pattern = /\W+/) => {
+  if (!(name in process.env)) {
+    console.log(`Warning: environment variable ${name} is not set`)
+    return []
+  }
+  return String(process.env[name]).split(pattern).filter(s => s.length)
+}
