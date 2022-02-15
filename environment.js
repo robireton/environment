@@ -11,6 +11,14 @@ module.exports.parseInt = (name, ifNaN) => {
   return Number.isNaN(x) ? ifNaN : x
 }
 
+module.exports.parseInts = (name, pattern = /[^0-9-]+/) => {
+  if (!(name in process.env)) {
+    console.log(`Warning: environment variable ${name} is not set`)
+    return []
+  }
+  return String(process.env[name]).split(pattern).map(s => Number.parseInt(s, 10)).filter(Number.isInteger)
+}
+
 module.exports.parseFloat = (name, ifNaN) => {
   if (!(name in process.env)) console.log(`Warning: environment variable ${name} is not set`)
   const x = Number.parseFloat(process.env[name])

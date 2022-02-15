@@ -1,6 +1,6 @@
 {
   "name": "@robireton/environment",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "helpers for interacting with the process environment",
   "type": "commonjs",
   "main": "environment.js",

@@ -67,6 +67,22 @@ environment.parseInt('SHELL', 1066)
 // => 1066
 ```
 
+### parseInts( *name* : `string` [, *pattern* : `RegExp` or `string` ] )
+
+#### arguments
+*name* : `string`: name of an environment variable
+
+*pattern* : `regular expression` or `string` (defaults to `/[^0-9-]+/` — one or more non-digit/hyphen-minus characters) used to split the value of the environment variable into an array
+
+#### returns
+`[ int, … ]`: an array of integers, or an empty array if *name* isn’t set 
+
+#### example
+```js
+environment.parseInts('127.0.0.1', '.')
+// => [ 127, 0, 0, 1 ]
+```
+
 ### parseFloat( *name* : `string` [, *default* : `float` ] )
 
 #### arguments
