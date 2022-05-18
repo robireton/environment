@@ -1,34 +1,34 @@
-'use strict'
+import { env, emitWarning } from 'process'
 
-module.exports.parseBool = name => {
-  if (!(name in process.env)) console.log(`Warning: environment variable ${name} is not set`)
-  return String(process.env[name]).toLowerCase() === 'true'
+export function parseBool (name) {
+  if (env.NODE_ENV !== 'production' && !(name in env)) emitWarning(`environment variable ${name} is not set`)
+  return String(env[name]).toLowerCase() === 'true'
 }
 
-module.exports.parseInt = (name, ifNaN) => {
-  if (!(name in process.env)) console.log(`Warning: environment variable ${name} is not set`)
-  const x = Number.parseInt(process.env[name], 10)
+export function parseInt (name, ifNaN) {
+  if (env.NODE_ENV !== 'production' && !(name in env)) emitWarning(`environment variable ${name} is not set`)
+  const x = Number.parseInt(env[name])
   return Number.isNaN(x) ? ifNaN : x
 }
 
-module.exports.parseInts = (name, pattern = /[^0-9-]+/) => {
-  if (!(name in process.env)) {
-    console.log(`Warning: environment variable ${name} is not set`)
+export function parseInts (name, pattern = /[^0-9-]+/) {
+  if (!(name in env)) {
+    if (env.NODE_ENV !== 'production') emitWarning(`environment variable ${name} is not set`)
     return []
   }
-  return String(process.env[name]).split(pattern).map(s => Number.parseInt(s, 10)).filter(Number.isInteger)
+  return String(env[name]).split(pattern).map(s => Number.parseInt(s)).filter(Number.isInteger)
 }
 
-module.exports.parseFloat = (name, ifNaN) => {
-  if (!(name in process.env)) console.log(`Warning: environment variable ${name} is not set`)
-  const x = Number.parseFloat(process.env[name])
+export function parseFloat (name, ifNaN) {
+  if (env.NODE_ENV !== 'production' && !(name in env)) emitWarning(`environment variable ${name} is not set`)
+  const x = Number.parseFloat(env[name])
   return Number.isNaN(x) ? ifNaN : x
 }
 
-module.exports.parseList = (name, pattern = /\W+/) => {
-  if (!(name in process.env)) {
-    console.log(`Warning: environment variable ${name} is not set`)
+export function parseList (name, pattern = /\W+/) {
+  if (!(name in env)) {
+    if (env.NODE_ENV !== 'production') emitWarning(`environment variable ${name} is not set`)
     return []
   }
-  return String(process.env[name]).split(pattern).filter(s => s.length)
+  return String(env[name]).split(pattern).filter(s => s.length)
 }
