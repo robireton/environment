@@ -4,8 +4,11 @@
 [![current version](https://img.shields.io/npm/v/@robireton/environment)](https://www.npmjs.com/package/@robireton/environment)
 [![install size](https://packagephobia.com/badge?p=@robireton/environment)](https://packagephobia.com/result?p=@robireton/environment)
 
-helpers for interacting with the process environment
+*zero-dependency helpers for interacting with the process environment*
 
+Starting with v3.0.0, this is an ECMAScript module—stick with v2.x.x if you need a CommonJS module.
+
+---
 
 ## install
 ```sh
@@ -14,19 +17,19 @@ $ npm install @robireton/environment
 
 ## usage
 ```js
-const env = require('@robireton/environment')
+import * as environment from '@robireton/environment'
 
-env.parseBool('SOME_NAME')
+environment.parseBool('SOME_NAME')
 
-env.parseInt('SOME_NAME')
+environment.parseInt('SOME_NAME')
 
-env.parseInt('SOME_NAME', 1970)
+environment.parseInt('SOME_NAME', 1970)
 
-env.parseFloat('SOME_NAME')
+environment.parseFloat('SOME_NAME')
 
-env.parseFloat('SOME_NAME', 2.71828)
+environment.parseFloat('SOME_NAME', 2.71828)
 
-env.parseList('SOME_NAME')
+environment.parseList('SOME_NAME')
 
 ```
 

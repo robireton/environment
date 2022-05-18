@@ -1,8 +1,8 @@
 {
   "name": "@robireton/environment",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "helpers for interacting with the process environment",
-  "type": "commonjs",
+  "type": "module",
   "main": "environment.js",
   "scripts": {
     "test": "node tests.js"
